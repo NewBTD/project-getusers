@@ -1,5 +1,7 @@
-import { NextResponse } from 'next/server';
-import { getUser, updateUser, deleteUser } from '../../../lib/db';
+/** @format */
+
+import { NextResponse } from "next/server";
+import { getUser, updateUser, deleteUser } from "../../../lib/db";
 
 export async function GET(
   request: Request,
@@ -9,7 +11,7 @@ export async function GET(
   if (user) {
     return NextResponse.json(user);
   } else {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 }
 
@@ -22,7 +24,7 @@ export async function PUT(
   if (updatedUser) {
     return NextResponse.json(updatedUser);
   } else {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 }
 
@@ -34,7 +36,6 @@ export async function DELETE(
   if (deletedUser) {
     return NextResponse.json(deletedUser);
   } else {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 }
-
